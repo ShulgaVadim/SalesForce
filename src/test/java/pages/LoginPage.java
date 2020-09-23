@@ -1,5 +1,7 @@
 package pages;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,11 +15,15 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("Login")
+    @Description("Open login page")
     public LoginPage openPage() {
         driver.get("https://login.salesforce.com/");
         return this;
     }
 
+    @Step("Login")
+    @Description("Login and go to Main page")
     public MainPage login(String username, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);

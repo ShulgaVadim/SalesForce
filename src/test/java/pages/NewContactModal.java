@@ -3,6 +3,7 @@ package pages;
 import elements.Input;
 import elements.Select;
 import elements.TextArea;
+import io.qameta.allure.Step;
 import modals.Contact;
 import org.apache.commons.lang3.ObjectUtils;
 import org.openqa.selenium.By;
@@ -24,6 +25,7 @@ public class NewContactModal {
         wait = new WebDriverWait(driver, 20);
     }
 
+    @Step("Create new Contact")
     public ContactsPage createContact(Contact contact) {
         new Input(driver, "First Name").write(contact.getFirstName());
         new Input(driver, "Middle Name").write(contact.getMiddleName());
